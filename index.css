@@ -1,55 +1,29 @@
 body{
-    background-color: blue;
+    background-color: white;
 }
-.header{
-    height: 20%;
-    color: white;
-    width: 100%;
-    text-align: center;
-    border: 5px solid white;
-    font-style: italic;
-}
-h1{
-    color: white;
-}
-h5{
-    color: white;
-}
+
 .pojemnik{
-    height: 70%;
-    width: 100%;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: chartreuse;
 }
-.menu{
-    text-align: left;
-    width: 10%;
-    border: 5px solid white;
-    float: left;
+.lewy{
+    background-color: aqua;
+    width: 50px;
+    height: 50px;
 }
-.menuprawe{
-    text-align: center;
-    width: 10%;
-    border: 5px solid white;
-    float: right;
+.lewy:hover{
+    background-color: brown;
 }
-.cialo{
-    text-align: left;
-    width: 80%;
-    float: center;
+..prawy{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
 }
-p.cialo{
-    text-align: left;
-    color: white;
-}
-.stopka{
-    height: 10%;
-    border: 2px solid white;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    clear: both;
-}
-p{
-    color: white;
-    text-align: center;
-    font-size: 17px;
+.srodek{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
 }
