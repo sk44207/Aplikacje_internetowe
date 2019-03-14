@@ -25,10 +25,20 @@ h5{
     border: 5px solid white;
     float: left;
 }
+.menuprawe{
+    text-align: center;
+    width: 10%;
+    border: 5px solid white;
+    float: right;
+}
 .cialo{
     text-align: left;
-    width: 89%;
-    float: right;
+    width: 80%;
+    float: center;
+}
+p.cialo{
+    text-align: left;
+    color: white;
 }
 .stopka{
     height: 10%;
@@ -42,8 +52,4 @@ p{
     color: white;
     text-align: center;
     font-size: 17px;
-}
-p.cialo{
-    text-align: left;
-    color: white;
 }
