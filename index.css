@@ -14,21 +14,41 @@ body{
 .boksgora{
     flex: 100px;
     border: 1px solid black;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
 }
 .bokssrodek{
     flex: 200px;
     border: 1px solid black;
+    line-height: 200px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
 }
 .boksdol{
     flex: 100px;
     border: 1px solid black;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
 }
 .duzesrodek{
     flex: 100px;
     border: 1px solid black;
+    line-height: 500px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
 }
 .duzeprawo{
     flex: 200px;
     border: 1px solid black;
+    line-height: 500px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
 
 }
