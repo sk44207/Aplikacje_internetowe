@@ -12,43 +12,27 @@ body{
     flex: 100px;
 }
 .boksgora{
+    flex-grow: 1;
     flex: 100px;
     border: 1px solid black;
-    line-height: 100px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-}
+} 
 .bokssrodek{
+    flex-grow: 2;
     flex: 200px;
     border: 1px solid black;
-    line-height: 200px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
 }
 .boksdol{
-    flex: 100px;
+    flex-grow: 1;
+    flex:100px;
     border: 1px solid black;
-    line-height: 100px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
 }
 .duzesrodek{
+    flex-grow: 1;
     flex: 100px;
     border: 1px solid black;
-    line-height: 500px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
 }
 .duzeprawo{
+    flex-grow:2;
     flex: 200px;
     border: 1px solid black;
-    line-height: 500px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-
 }
