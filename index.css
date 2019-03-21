@@ -1,49 +1,38 @@
 body{
-    background-color: blue;
-}
-.header{
-    height: 20%;
-    color: white;
-    width: 100%;
-    text-align: center;
-    border: 5px solid white;
-    font-style: italic;
-}
-h1{
-    color: white;
-}
-h5{
-    color: white;
+    background-color: white;
 }
 .pojemnik{
-    height: 70%;
-    width: 100%;
+    display: flex;
+    height: 50%;
+    width: 75%;
 }
-.menu{
-    text-align: left;
-    width: 10%;
-    border: 5px solid white;
-    float: left;
+.duzelewo{
+    flex-direction: column;
+    display: flex;
+    flex: 100px;
 }
-.cialo{
-    text-align: left;
-    width: 89%;
-    float: right;
+.boksgora{
+    flex-grow: 1;
+    flex: 100px;
+    border: 1px solid black;
+} 
+.bokssrodek{
+    flex-grow: 2;
+    flex: 200px;
+    border: 1px solid black;
 }
-.stopka{
-    height: 10%;
-    border: 2px solid white;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    clear: both;
+.boksdol{
+    flex-grow: 1;
+    flex:100px;
+    border: 1px solid black;
 }
-p{
-    color: white;
-    text-align: center;
-    font-size: 17px;
+.duzesrodek{
+    flex-grow: 1;
+    flex: 100px;
+    border: 1px solid black;
 }
-p.cialo{
-    text-align: left;
-    color: white;
+.duzeprawo{
+    flex-grow:2;
+    flex: 200px;
+    border: 1px solid black;
 }
