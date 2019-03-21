@@ -1,38 +1,14 @@
-body{
-    background-color: white;
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
 }
 .pojemnik{
-    display: flex;
-    height: 50%;
-    width: 75%;
-}
-.duzelewo{
-    flex-direction: column;
-    display: flex;
-    flex: 100px;
-}
-.boksgora{
-    flex-grow: 1;
-    flex: 100px;
-    border: 1px solid black;
-} 
-.bokssrodek{
-    flex-grow: 2;
-    flex: 200px;
-    border: 1px solid black;
-}
-.boksdol{
-    flex-grow: 1;
-    flex:100px;
-    border: 1px solid black;
-}
-.duzesrodek{
-    flex-grow: 1;
-    flex: 100px;
-    border: 1px solid black;
-}
-.duzeprawo{
-    flex-grow:2;
-    flex: 200px;
-    border: 1px solid black;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+    width: 50%;
+    height: 80%;
+    margin: 20px auto 0;
 }
