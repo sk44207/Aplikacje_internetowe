@@ -57,7 +57,7 @@ const handlclick = ev => {
 
         default:
             if (key === '0' && disp.textContent === '0') return;
-            if (key === '.' && (disp.textContent.includes('.')) || clearflag ) return;
+            if (key === '.' && disp.textContent.includes('.')) return;
             if (key !== ('.') && disp.textContent === '0' || clearflag) {
                 disp.textContent = key;
                 clearflag = false;
