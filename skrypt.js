@@ -26,6 +26,7 @@ class calc {
         this.op = 0;
         this.pojemnik = document.createElement('div');
         this.pojemnik.id = 'pojemnik';
+        this.display = null;
         this.createButtons();
 
     }
@@ -38,11 +39,12 @@ class calc {
             guzik.style.gridRow = el.row;
             this.pojemnik.appendChild(guzik);
             if (el.text === 'Display') {
-                this.disp.guzik.id = 'Display';
+                this.display=button;
                 guzik.textContent = 0;
             } else {
                 guzik.addEventListener('click',() => this.handlclick(ev));
             }
+            this.pojemnik.appendChild(guzik);
         });
 
     }
@@ -89,20 +91,19 @@ class calc {
                     this.memory += this.op * this.disp;
                 }
                 this.op = 0;
-                this.disp.textContent = this.memory;
+                this.disp = this.memory;
                 break;
 
 
             default:
-                if (key === '0' && this.disp === '0') return;
-                if (key === '.' && this.display.textContent.includes('.')) return;
-                if (key !== ('.') && this.disp === '0' || this.clearflag) {
-                    this.disp = key;
-                    this.clearflag = false;
-                }
-                else {
-                    this.disp += key;
-                }
+            if (key === '0' && this.disp === 0) return;
+            if (key === '.' && disp.textContent.includes('.') || this.clearFlag) return;
+            if ((key !== '.' && this.disp === 0) || this.clearFlag) {
+                this.disp = key;
+                this.clearFlag = false;
+            } else {
+                this.disp += key;
+            }
                 break;
         }
     }
