@@ -17,78 +17,100 @@ const tablica =
         { text: '=', col: 4, row: 5 },
         { text: '.', col: 3, row: 5 }
     ];
-let clearflag = false;
-let memory = 0;
-let op = 0;
-const handlclick = ev => {
-    const disp = document.getElementById('Display');
-    const key = ev.target.textContent;
-    switch (key) {
-        case 'c':
-            clearflag = false;
-            memory = 0;
-            op = 0;
-            disp.textContent = 0;
-            break;
 
 
-        case '+':
-        case '-':
-            if (op === 0) {
-                memory = parseFloat(disp.textContent);
-            } else {
-                memory += op * parseFloat(disp.textContent);
-            }
-            op = key === '+' ? 1 : -1;
-            clearflag = true;
-            break;
+class calc {
+    constructor() {
+        this.clearflag = false;
+        this.memory = 0;
+        this.op = 0;
+        this.pojemnik = document.createElement('div');
+        this.pojemnik.id = 'pojemnik';
+        this.createButtons();
 
-
-        case '=':
-            if (op === 0) {
-                memory = parseFloat(disp.textContent);
-            } else {
-                memory += op * parseFloat(disp.textContent);
-            }
-            op = 0;
-            disp.textContent = memory;
-            break;
-
-
-        default:
-            if (key === '0' && disp.textContent === '0') return;
-            if (key === '.' && disp.textContent.includes('.')) return;
-            if (key !== ('.') && disp.textContent === '0' || clearflag) {
-                disp.textContent = key;
-                clearflag = false;
-            }
-            else {
-                disp.textContent += key;
-            }
-            break;
     }
-}
+    createButtons() {
+
+        tablica.forEach(el => {
+            const guzik = document.createElement('div');
+            guzik.textContent = el.text;
+            guzik.style.gridColumn = el.col;
+            guzik.style.gridRow = el.row;
+            this.pojemnik.appendChild(guzik);
+            if (el.text === 'Display') {
+                this.disp.guzik.id = 'Display';
+                guzik.textContent = 0;
+            } else {
+                guzik.addEventListener('click',() => this.handlclick(ev));
+            }
+        });
+
+    }
+    init() {
+        document.body.appendChild(this.pojemnik);
+    }
+
+    set disp(val) {
+        this.display.textContent = val;
+    }
+    get disp() {
+        return parseFloat(this.display.textContent);
+    }
+
+    handlclick(ev) {
+
+        const key = ev.target.textContent;
+        switch (key) {
+            case 'c':
+                this.disp = 0;
+                this.clearflag = false;
+                this.memory = 0;
+                this.op = 0;
+
+                break;
 
 
-const init = () => {
-    const pojemnik = document.createElement('div');
-    pojemnik.id = "pojemnik";
+            case '+':
+            case '-':
+                if (this.op === 0) {
+                    this.memory = this.disp;
+                } else {
+                    this.memory += this.op * this.disp;
+                }
+                this.op = key === '+' ? 1 : -1;
+                this.clearflag = true;
+                break;
 
-    tablica.forEach(el => {
-        const guzik = document.createElement('div');
-        guzik.textContent = el.text;
-        guzik.style.gridColumn = el.col;
-        guzik.style.gridRow = el.row;
-        pojemnik.appendChild(guzik);
-        if (el.text === 'Display') {
-            guzik.id = 'Display';
-            guzik.textContent = 0;
-        } else {
-            guzik.addEventListener('click', handlclick);
+
+            case '=':
+                if (this.op === 0) {
+                    this.memory = this.disp;
+                } else {
+                    this.memory += this.op * this.disp;
+                }
+                this.op = 0;
+                this.disp.textContent = this.memory;
+                break;
+
+
+            default:
+                if (key === '0' && this.disp === '0') return;
+                if (key === '.' && this.display.textContent.includes('.')) return;
+                if (key !== ('.') && this.disp === '0' || this.clearflag) {
+                    this.disp = key;
+                    this.clearflag = false;
+                }
+                else {
+                    this.disp += key;
+                }
+                break;
         }
-    });
+    }
 
-    document.body.appendChild(pojemnik);
+
 }
 
-window.addEventListener('DOMContentLoaded', init);
+const kalku = new calc();
+
+
+window.addEventListener('DOMContentLoaded', () => kalku.init());
